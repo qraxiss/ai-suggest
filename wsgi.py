@@ -71,7 +71,7 @@ def predict(basket, model, items, cluster_variables):
     return choice(similar_products)
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/apriori', methods=['POST'])
 def predict_route():
     data = request.json
     basket = data.get('basket', [])
@@ -88,4 +88,4 @@ def predict_route():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8000, debug=True)
